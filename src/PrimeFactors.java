@@ -1,4 +1,6 @@
 //FHWT Sem.7 Jg. 2007 - Stephan Massmann
+//Ausgabe der Primzahlen zwischen 1 und 1000
+
 public class PrimeFactors {
 
 	public static void main(String[] args) {

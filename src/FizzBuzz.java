@@ -1,4 +1,6 @@
 //FHWT Sem.7 Jg. 2007 - Stephan Massmann
+//Code-Kata zum Spiel FizzBuzz
+
 public class FizzBuzz {
 
 	public static void main(String[] args) {
