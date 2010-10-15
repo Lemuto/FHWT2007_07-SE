@@ -1,5 +1,5 @@
 //FHWT Sem.7 Jg. 2007 - Stephan Massmann
-//Berechnung der Zahl Pi auf fünf Nachkommastellen
+//Berechnung der Zahl Pi - Variable Angabe der Nachkommastellen
 
 //Mathematische Operationen
 import java.lang.Math;
@@ -7,25 +7,25 @@ import java.lang.Math;
 public class Pi {
 
 	public static void main(String[] args) {
-		pi(5);
+		pi(Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Anzahl der Nachkommastellen angeben")));
 	}
 	
 	private static void pi(int genauigkeit) {
-		double pi, pi_old = 4, factor = 1;
+		double pi, pi_old = 4, factor = 1, stellen = Math.pow(10.,genauigkeit);
 		boolean check = true;
-		int i = 3, vorzeichen = 1;
+		long i = 3;
+		int vorzeichen = 1;
 		while (check){
-			//Vorzeichenwechsel bei jedem Durchgang
 			vorzeichen *= -1;
 			//Berechnung des neuen Faktors
 			factor += (1./i) * vorzeichen;
 			//Runden auf Nachkommastellen, Anzahl in genauigkeit definiert
-			pi = Math.round(4 * factor * Math.pow(10.,genauigkeit)) / Math.pow(10.,genauigkeit);
+			pi = Math.round(4 * factor * stellen) / stellen;
 			//Prüfen, ob sich der gerundete Wert seit dem letzten Durchgang geändert hat
 			if (pi == pi_old){
 				//Keine Verbesserung der Genauigkeit ==> Ausgabe + Abbruch
 				check = false;
-				System.out.println("Nach " + (i/2) + " Durchläufen wurde die Zahl pi (" + pi + ") ermittelt!");
+				System.out.println("Nach " + (i/2) + " Durchläufen wurde die Zahl pi (" + pi + ") bis auf die " + genauigkeit + ". Stelle genau ermittelt!");
 			}
 			else {
 				pi_old = pi;
