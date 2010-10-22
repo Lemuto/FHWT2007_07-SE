@@ -8,7 +8,7 @@ public class Pi {
 
 	public static void main(String[] args) {
 		pi(Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Anzahl der Nachkommastellen angeben")));
-	}
+	}	
 	
 	private static void pi(int genauigkeit) {
 		double pi, pi_old = 4, factor = 1, stellen = Math.pow(10.,genauigkeit);
@@ -26,6 +26,7 @@ public class Pi {
 				//Keine Verbesserung der Genauigkeit ==> Ausgabe + Abbruch
 				check = false;
 				System.out.println("Nach " + (i/2) + " Durchläufen wurde die Zahl pi (" + pi + ") bis auf die " + genauigkeit + ". Stelle genau ermittelt!");
+				javax.swing.JOptionPane.showMessageDialog(null, "Nach " + (i/2) + " Durchläufen wurde die Zahl pi (" + pi + ") bis auf die " + genauigkeit + ". Stelle genau ermittelt!", null, vorzeichen, null);
 			}
 			else {
 				pi_old = pi;
